@@ -90,4 +90,4 @@ class Student
   end
 end
 
-binding.pry
+#binding.pry
