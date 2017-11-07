@@ -21,6 +21,9 @@ class Student
     students = []
     all_students.map do |x|
       new_student = Student.new
+      new_student.id = x[0]
+      new_student.name = x[1]
+      new_student.grade = x[2]
       students << new_student
     end
     students
