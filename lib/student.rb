@@ -29,6 +29,9 @@ class Student
     students
   end
 
+  def self.first_X_students_in_grade_10
+  end
+
   def self.find_by_name(name)
     # find the student in the database given a name
     # return a new instance of the Student class
