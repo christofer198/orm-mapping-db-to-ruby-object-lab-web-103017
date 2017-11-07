@@ -16,8 +16,16 @@ class Student
   def self.all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
-    binding.pry
-    DB[:conn].execute("select * from students")
+    
+    all_students = DB[:conn].execute("select * from students")
+    students = []
+    all_students.map do [x]
+      new_student = Student.new
+      new_student.id = x[0]
+      new_student.name = x[1]
+      new_student.grade = x[2]
+      students << new_student
+    end
   end
 
   def self.find_by_name(name)
