@@ -19,7 +19,7 @@ class Student
 
     all_students = DB[:conn].execute("select * from students")
     students = []
-    all_students.map do [x]
+    all_students.map do |x|
       new_student = Student.new
       students << new_student
     end
