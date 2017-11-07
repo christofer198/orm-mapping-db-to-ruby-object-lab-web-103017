@@ -30,7 +30,7 @@ class Student
   end
 
   def self.first_X_students_in_grade_10(limit)
-    DB[:conn].expect("select * from student where grade=10 limit #{limit}")
+    DB[:conn].executect("select * from student where grade=10 limit #{limit}")
 
   end
 
