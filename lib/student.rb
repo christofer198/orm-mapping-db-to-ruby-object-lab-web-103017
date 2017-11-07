@@ -56,6 +56,10 @@ class Student
     new_student
   end
 
+  def self.all_students_in_grade_X(arg)
+    DB[:conn].execute("select * from students where grade='#{arg}'")
+    
+
   def self.count_all_students_in_grade_9
     DB[:conn].execute("select * from students where grade='9'")
   end
