@@ -22,7 +22,11 @@ class Student
     # find the student in the database given a name
     # return a new instance of the Student class
     binding.pry
-    DB[:conn].execute("select * from students where name='#{}'")
+    row = DB[:conn].execute("select * from students where name='#{name}'").flatten
+    new_student = Student.new
+    new_student.id = row[0]
+    new_student.name = row[1]
+    new_student.grade = row[2]
   end
 
   def save
