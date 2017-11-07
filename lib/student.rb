@@ -36,6 +36,7 @@ class Student
 
   def self.first_student_in_grade_10
     row = DB[:conn].execute("select * from students where grade=10 limit 1")
+    new_student = Student.new
     new_student.id = row[0]
     new_student.name = row[1]
     new_student.grade = row[2]
