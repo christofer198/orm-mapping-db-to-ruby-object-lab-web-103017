@@ -21,7 +21,7 @@ class Student
   def self.find_by_name(name)
     # find the student in the database given a name
     # return a new instance of the Student class
-    binding.pry
+    #binding.pry
     row = DB[:conn].execute("select * from students where name='#{name}'").flatten
     new_student = Student.new
     new_student.id = row[0]
@@ -29,6 +29,10 @@ class Student
     new_student.grade = row[2]
     new_student
   end
+
+  def self.count_all_students_in_grade_9
+    DB[:conn].execute("select * from students where grade='9'").flatten
+    
 
   def save
     sql = <<-SQL
