@@ -31,7 +31,7 @@ class Student
 
   def self.first_X_students_in_grade_10(limit)
     DB[:conn].expect("select * from student where grade=10 limit #{limit}")
-      
+
   end
 
   def self.find_by_name(name)
